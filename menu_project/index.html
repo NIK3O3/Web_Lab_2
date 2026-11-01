@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Динамічне меню</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="#" class="logo" id="logo">WebDemo</a>
+      <nav class="main-nav" id="mainNav" aria-label="Головне меню">
+        <ul class="nav-list">
+          <li class="nav-item">
+            <a href="#home" class="nav-link">Головна</a>
+          </li>
+          <li class="nav-item has-submenu">
+            <a href="#services" class="nav-link" aria-haspopup="true" aria-expanded="false">
+              Послуги
+              <span class="arrow" aria-hidden="true">▾</span>
+            </a>
+            <ul class="submenu" role="menu">
+              <li role="none"><a href="#web" role="menuitem">Веб-розробка</a></li>
+              <li role="none"><a href="#design" role="menuitem">Дизайн інтерфейсів</a></li>
+              <li role="none"><a href="#seo" role="menuitem">SEO-оптимізація</a></li>
+              <li role="none"><a href="#support" role="menuitem">Підтримка</a></li>
+            </ul>
+          </li>
+          <li class="nav-item has-submenu">
+            <a href="#portfolio" class="nav-link" aria-haspopup="true" aria-expanded="false">
+              Портфоліо
+              <span class="arrow" aria-hidden="true">▾</span>
+            </a>
+            <ul class="submenu" role="menu">
+              <li role="none"><a href="#projects" role="menuitem">Проєкти</a></li>
+              <li role="none"><a href="#cases" role="menuitem">Кейси</a></li>
+              <li role="none"><a href="#reviews" role="menuitem">Відгуки</a></li>
+            </ul>
+          </li>
+          <li class="nav-item has-submenu">
+            <a href="#about" class="nav-link" aria-haspopup="true" aria-expanded="false">
+              Про нас
+              <span class="arrow" aria-hidden="true">▾</span>
+            </a>
+            <ul class="submenu" role="menu">
+              <li role="none"><a href="#team" role="menuitem">Команда</a></li>
+              <li role="none"><a href="#history" role="menuitem">Історія</a></li>
+              <li role="none"><a href="#contacts" role="menuitem">Контакти</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a href="#blog" class="nav-link">Блог</a>
+          </li>
+        </ul>
+      </nav>
+      <button class="menu-toggle" id="menuToggle" aria-label="Відкрити меню" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero" id="home">
+      <h1>Динамічне меню на JavaScript</h1>
+      <p class="lead">
+        Наведіть курсор миші на пункти «Послуги», «Портфоліо» або «Про нас»,
+        щоб відкрити підменю. Меню з’являється плавно і закривається після
+        відведення курсора.
+      </p>
+      <div class="status-panel" id="statusPanel" aria-live="polite">
+        <strong>Статус:</strong> <span id="statusText">меню закрите</span>
+      </div>
+    </section>
+
+    <section class="info-cards">
+      <article class="card">
+        <h2>Як це працює</h2>
+        <p>
+          Події <code>mouseenter</code> та <code>mouseleave</code> відстежують
+          наведення. Клас <code>open</code> додається до пункту меню, а
+          <code>aria-expanded</code> оновлюється для доступності.
+        </p>
+      </article>
+      <article class="card">
+        <h2>Адаптивність</h2>
+        <p>
+          На вузьких екранах з’являється кнопка-гамбургер. Підменю відкриваються
+          кліком, щоб зручно користуватися на сенсорних пристроях.
+        </p>
+      </article>
+      <article class="card">
+        <h2>Без бібліотек</h2>
+        <p>
+          Уся логіка написана на чистому JavaScript. Стилі - у звичайному CSS
+          без фреймворків. Сторінка працює локально через <code>file://</code>.
+        </p>
+      </article>
+    </section>
+
+    <section class="demo-area" id="services">
+      <h2>Область демонстрації</h2>
+      <p id="demoMessage">Оберіть пункт підменю - тут з’явиться повідомлення.</p>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
